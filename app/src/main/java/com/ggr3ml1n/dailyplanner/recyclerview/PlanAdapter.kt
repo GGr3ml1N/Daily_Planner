@@ -3,12 +3,14 @@ package com.ggr3ml1n.dailyplanner.recyclerview
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ggr3ml1n.dailyplanner.R
 import com.ggr3ml1n.dailyplanner.databinding.PlanItemBinding
 import com.ggr3ml1n.dailyplanner.entities.Plan
 
-class PlanAdapter() : RecyclerView.Adapter<PlanAdapter.PlanHolder>() {
+class PlanAdapter() : ListAdapter<Plan,PlanAdapter.PlanHolder>(ItemComparator()) {
     
     val planList: ArrayList<Plan> = ArrayList()
     
@@ -17,14 +19,12 @@ class PlanAdapter() : RecyclerView.Adapter<PlanAdapter.PlanHolder>() {
     
     
     override fun onBindViewHolder(holder: PlanHolder, position: Int) {
-        holder.bind(planList[position])
+        holder.bind(getItem(position))
     }
-    
-    override fun getItemCount(): Int = planList.size
     
     fun addPlan(plan: Plan) {
         planList.add(plan)
-        notifyItemInserted(planList.size-1)
+        notifyDataSetChanged()
     }
     
     class PlanHolder(item: View) : RecyclerView.ViewHolder(item) {
@@ -47,6 +47,15 @@ class PlanAdapter() : RecyclerView.Adapter<PlanAdapter.PlanHolder>() {
                 )
             )
         }
+        
+    }
+    class ItemComparator : DiffUtil.ItemCallback<Plan>() {
+        
+        override fun areItemsTheSame(oldItem: Plan, newItem: Plan): Boolean =
+            oldItem.id == newItem.id
+        
+        override fun areContentsTheSame(oldItem: Plan, newItem: Plan): Boolean =
+            oldItem == newItem
         
     }
 }

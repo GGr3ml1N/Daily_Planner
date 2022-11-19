@@ -8,14 +8,14 @@ import kotlinx.serialization.Serializable
 @Serializable
 @Entity (tableName = "plant")
 data class Plan(
-  /*  @PrimaryKey (autoGenerate = true)
-    var id: Int?,*/
+    @PrimaryKey (autoGenerate = true)
+    var id: Int?,
     @ColumnInfo (name = "name")
     val name: String,
     @ColumnInfo (name = "description")
     val description: String,
-    /*@ColumnInfo (name = "date_start")
+    @ColumnInfo (name = "date_start")
     val dateStart: Int,
     @ColumnInfo (name = "date_finish")
-    val dateFinish: Int,*/
+    val dateFinish: Int,
 )
