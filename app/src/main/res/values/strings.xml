@@ -1,3 +1,20 @@
 <resources>
+    <!--app_name-->
     <string name="app_name">Daily Planner</string>
+
+    <!-- plan_item -->
+    <string name="title_hint">Название</string>
+    <string name="sample_time">Пример времени</string>
+
+    <!-- bottom_menu -->
+    <string name="calendar">Календарь</string>
+    <string name="plan_list">Список дел</string>
+
+    <!-- fragment_calendar -->
+    <string name="choose_data">Выберите дату:</string>
+
+    <!-- fragment_list_of_plans -->
+    <string name="add_new_plan">+</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
