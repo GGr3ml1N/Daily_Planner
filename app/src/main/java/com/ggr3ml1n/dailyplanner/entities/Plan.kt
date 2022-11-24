@@ -3,19 +3,18 @@ package com.ggr3ml1n.dailyplanner.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.serialization.Serializable
+import java.io.Serializable
 
-@Serializable
-@Entity (tableName = "plant")
+@Entity (tableName = "plans_list")
 data class Plan(
-    @PrimaryKey (autoGenerate = true)
+    @PrimaryKey(autoGenerate = true)
     var id: Int?,
-    @ColumnInfo (name = "name")
+    @ColumnInfo(name = "name")
     val name: String,
-    @ColumnInfo (name = "description")
+    @ColumnInfo(name = "description")
     val description: String,
-    @ColumnInfo (name = "date_start")
+    @ColumnInfo(name = "date_start")
     val dateStart: Int,
-    @ColumnInfo (name = "date_finish")
+    @ColumnInfo(name = "date_finish")
     val dateFinish: Int,
-)
+) : Serializable
