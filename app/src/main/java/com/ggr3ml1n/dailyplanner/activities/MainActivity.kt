@@ -1,10 +1,12 @@
 package com.ggr3ml1n.dailyplanner.activities
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ggr3ml1n.dailyplanner.R
 import com.ggr3ml1n.dailyplanner.databinding.ActivityMainBinding
+import com.ggr3ml1n.dailyplanner.fragments.Calendar
+import com.ggr3ml1n.dailyplanner.fragments.FragmentManager
+import com.ggr3ml1n.dailyplanner.fragments.ListOfPlans
 
 class MainActivity : AppCompatActivity() {
     
@@ -25,10 +27,10 @@ class MainActivity : AppCompatActivity() {
         binding.bottomMenu.setOnItemSelectedListener {
             when (it.itemId){
                 R.id.btn_calendar -> {
-                    Toast.makeText(this, "Button Calendar has been pressed", Toast.LENGTH_SHORT).show()
+                    FragmentManager.setFragment(Calendar.newInstance(),this)
                 }
                 R.id.plan_list -> {
-                    Toast.makeText(this, "Button List has been pressed", Toast.LENGTH_SHORT).show()
+                    FragmentManager.setFragment(ListOfPlans.newInstance(),this)
                 }
             }
             true
