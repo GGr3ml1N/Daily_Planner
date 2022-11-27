@@ -15,6 +15,35 @@
 
     <!-- fragment_list_of_plans -->
     <string name="add_new_plan">+</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- upper_edit_plan_activity_menu -->
+    <string name="save">Сохранить</string>
+
+    <!-- activity_edit-->
+    <string name="hint_title">Название</string>
+    <string name="hint_description">Описание</string>
+    <string name="time1">00:00 – 01:00</string>
+    <string name="time2">01:00 – 02:00</string>
+    <string name="time3">02:00 – 03:00</string>
+    <string name="time4">03:00 – 04:00</string>
+    <string name="time5">04:00 – 05:00</string>
+    <string name="time6">05:00 – 06:00</string>
+    <string name="time7">06:00 – 07:00</string>
+    <string name="time8">07:00 – 08:00</string>
+    <string name="time9">08:00 – 09:00</string>
+    <string name="time10">09:00 – 10:00</string>
+    <string name="time11">10:00 – 11:00</string>
+    <string name="time12">11:00 – 12:00</string>
+    <string name="time13">12:00 – 13:00</string>
+    <string name="time14">13:00 – 14:00</string>
+    <string name="time15">14:00 – 15:00</string>
+    <string name="time16">15:00 – 16:00</string>
+    <string name="time17">16:00 – 17:00</string>
+    <string name="time18">17:00 – 18:00</string>
+    <string name="time19">18:00 – 19:00</string>
+    <string name="time20">19:00 – 20:00</string>
+    <string name="time21">20:00 – 21:00</string>
+    <string name="time22">21:00 – 22:00</string>
+    <string name="time23">22:00 – 23:00</string>
+    <string name="time24">23:00 – 24:00</string>
 </resources>
