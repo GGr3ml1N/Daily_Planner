@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ggr3ml1n.dailyplanner.R
 import com.ggr3ml1n.dailyplanner.databinding.ActivityMainBinding
-import com.ggr3ml1n.dailyplanner.fragments.Calendar
+import com.ggr3ml1n.dailyplanner.fragments.CalendarFragment
 import com.ggr3ml1n.dailyplanner.fragments.FragmentManager
 import com.ggr3ml1n.dailyplanner.fragments.ListOfPlans
 
@@ -18,16 +18,15 @@ class MainActivity : AppCompatActivity() {
         
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        
+        fragmentOnStart()
         setBottomNavListener()
-        
     }
     
     private fun setBottomNavListener(){
         binding.bottomMenu.setOnItemSelectedListener {
             when (it.itemId){
                 R.id.btn_calendar -> {
-                    FragmentManager.setFragment(Calendar.newInstance(),this)
+                    FragmentManager.setFragment(CalendarFragment.newInstance(),this)
                 }
                 R.id.plan_list -> {
                     FragmentManager.setFragment(ListOfPlans.newInstance(),this)
@@ -35,6 +34,10 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
+    
+    private fun fragmentOnStart(){
+        FragmentManager.setFragment(CalendarFragment.newInstance(), this)
     }
     
     
