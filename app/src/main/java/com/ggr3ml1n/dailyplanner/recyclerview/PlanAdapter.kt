@@ -9,15 +9,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ggr3ml1n.dailyplanner.R
 import com.ggr3ml1n.dailyplanner.databinding.PlanItemBinding
 import com.ggr3ml1n.dailyplanner.entities.Plan
+import java.text.SimpleDateFormat
+import java.util.*
 
-class PlanAdapter(private val listener: Listener) : ListAdapter<Plan, PlanAdapter.PlanHolder>(ItemComparator()) {
+class PlanAdapter(/*private val listener: Listener*/) : ListAdapter<Plan, PlanAdapter.PlanHolder>(ItemComparator()) {
     
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanHolder =
         PlanHolder.create(parent)
     
     
     override fun onBindViewHolder(holder: PlanHolder, position: Int) {
-        holder.setData(getItem(position), listener)
+        holder.setData(getItem(position)/*, listener*/)
         notifyItemInserted(position)
     }
     
@@ -25,12 +27,12 @@ class PlanAdapter(private val listener: Listener) : ListAdapter<Plan, PlanAdapte
         
         private val binding = PlanItemBinding.bind(item)
         
-        fun setData(plan: Plan, listener: Listener) = with(binding) {
+        fun setData(plan: Plan/*, listener: Listener*/) = with(binding) {
             binding.tvName.text = plan.name
-            binding.tvData.text = "${plan.dateStart} - ${plan.dateFinish}"
-            itemView.setOnClickListener {
+            binding.tvData.text = "${SimpleDateFormat("hh:mm", Locale.getDefault()).format(plan.dateStart)} - ${SimpleDateFormat("hh:mm", Locale.getDefault()).format(plan.dateFinish)}"
+            /*itemView.setOnClickListener {
                 listener.onClick(plan)
-            }
+            }*/
         }
         
         companion object {
