@@ -14,7 +14,7 @@ data class Plan(
     @ColumnInfo(name = "description")
     val description: String,
     @ColumnInfo(name = "date_start")
-    val dateStart: Int,
+    val dateStart: String,
     @ColumnInfo(name = "date_finish")
-    val dateFinish: Int,
+    val dateFinish: String,
 ) : Serializable
