@@ -8,6 +8,10 @@ import java.lang.IllegalArgumentException
 
 class MainViewModel(database: MainDatabase) : ViewModel() {
     
+    val messageForListOfPlans: MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+    
     val dao = database.getDao()
     val allPlans: LiveData<List<Plan>> = dao.getAllPlans().asLiveData()
     
@@ -15,7 +19,7 @@ class MainViewModel(database: MainDatabase) : ViewModel() {
         dao.insertPlan(plan)
     }
     
-    class MainViewModelFactory(val database: MainDatabase) : ViewModelProvider.Factory {
+    class MainViewModelFactory(private val database: MainDatabase) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
