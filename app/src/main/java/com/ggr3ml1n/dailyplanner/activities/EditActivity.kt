@@ -82,7 +82,7 @@ class EditActivity : AppCompatActivity() {
         }
     }
     
-    fun createNewPlan() : Plan {
+    private fun createNewPlan(): Plan {
         return Plan(
             null,
             binding.edTitle.text.toString(),

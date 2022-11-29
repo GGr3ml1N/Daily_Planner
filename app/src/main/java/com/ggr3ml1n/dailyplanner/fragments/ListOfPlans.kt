@@ -83,7 +83,7 @@ class ListOfPlans : BaseFragment() {
     
     private fun observer() {
         mainViewModel.allPlans.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
+           adapter.submitList(it)
         }
     }
     
