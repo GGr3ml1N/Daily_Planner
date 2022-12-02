@@ -51,9 +51,10 @@ class PlanAdapter(/*private val listener: Listener*/) : ListAdapter<Plan, PlanAd
     class ItemComparator : DiffUtil.ItemCallback<Plan>() {
         override fun areItemsTheSame(oldItem: Plan, newItem: Plan): Boolean =
             oldItem.id == newItem.id
-        
-        
-        override fun areContentsTheSame(oldItem: Plan, newItem: Plan): Boolean = oldItem == newItem
+    
+    
+        override fun areContentsTheSame(oldItem: Plan, newItem: Plan): Boolean =
+            oldItem == newItem
     }
     
     interface Listener {

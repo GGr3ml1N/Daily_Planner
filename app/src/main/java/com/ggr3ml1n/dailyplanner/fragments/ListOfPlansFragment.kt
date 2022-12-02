@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class ListOfPlans : BaseFragment() {
+class ListOfPlansFragment : BaseFragment() {
     
     private lateinit var binding: FragmentListOfPlansBinding
     private lateinit var editPlan: ActivityResultLauncher<Intent>
@@ -97,7 +97,7 @@ class ListOfPlans : BaseFragment() {
         const val DATE = "current_or_selected_date"
         
         @JvmStatic
-        fun newInstance() = ListOfPlans()
+        fun newInstance() = ListOfPlansFragment()
     }
     
     private fun getCurrentDayTime(): Long {

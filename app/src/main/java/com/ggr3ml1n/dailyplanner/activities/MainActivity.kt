@@ -6,7 +6,7 @@ import com.ggr3ml1n.dailyplanner.R
 import com.ggr3ml1n.dailyplanner.databinding.ActivityMainBinding
 import com.ggr3ml1n.dailyplanner.fragments.CalendarFragment
 import com.ggr3ml1n.dailyplanner.fragments.FragmentManager
-import com.ggr3ml1n.dailyplanner.fragments.ListOfPlans
+import com.ggr3ml1n.dailyplanner.fragments.ListOfPlansFragment
 
 class MainActivity : AppCompatActivity() {
     
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                     FragmentManager.setFragment(CalendarFragment.newInstance(),this)
                 }
                 R.id.plan_list -> {
-                    FragmentManager.setFragment(ListOfPlans.newInstance(),this)
+                    FragmentManager.setFragment(ListOfPlansFragment.newInstance(),this)
                 }
             }
             true
