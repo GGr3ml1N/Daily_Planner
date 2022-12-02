@@ -11,7 +11,7 @@ import com.ggr3ml1n.dailyplanner.R
 
 import com.ggr3ml1n.dailyplanner.databinding.ActivityEditBinding
 import com.ggr3ml1n.dailyplanner.entities.Plan
-import com.ggr3ml1n.dailyplanner.fragments.ListOfPlans
+import com.ggr3ml1n.dailyplanner.fragments.ListOfPlansFragment
 
 class EditActivity : AppCompatActivity() {
     
@@ -22,7 +22,7 @@ class EditActivity : AppCompatActivity() {
         binding = ActivityEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
         actionBarSettings()
-        Log.d("MyLog", "3 ${intent.getLongExtra(ListOfPlans.DATE, 0)}")
+        Log.d("MyLog", "3 ${intent.getLongExtra(ListOfPlansFragment.DATE, 0)}")
         showPopUpMenu()
     }
     
@@ -92,14 +92,14 @@ class EditActivity : AppCompatActivity() {
                 .substring(0..1)
                 .toLong()
                 .times(3600000L)
-                .plus(intent.getLongExtra(ListOfPlans.DATE, 0))
+                .plus(intent.getLongExtra(ListOfPlansFragment.DATE, 0))
                 .toString(),
             binding.tvSettedTime.text
                 .toString()
                 .substring(8..9)
                 .toLong()
                 .times(3600000L)
-                .plus(intent.getLongExtra(ListOfPlans.DATE, 0))
+                .plus(intent.getLongExtra(ListOfPlansFragment.DATE, 0))
                 .toString(),
         )
     }
@@ -110,7 +110,7 @@ class EditActivity : AppCompatActivity() {
             Intent()
                 .apply {
                     putExtra(
-                        ListOfPlans.PLAN,
+                        ListOfPlansFragment.PLAN,
                         createNewPlan(),
                     )
                 },
